@@ -1,5 +1,5 @@
 (function() {var implementors = {};
-implementors['rmp'] = [];
+implementors["rmp"] = [];
 
             if (window.register_implementors) {
                 window.register_implementors(implementors);

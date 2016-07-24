@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["Float",""],["Integer",""],["Value",""],["ValueRef",""]]});
+initSidebarItems({"enum":[["Float","Floating point numbers representation."],["Integer","Integer representation."],["Value",""],["ValueRef",""]]});

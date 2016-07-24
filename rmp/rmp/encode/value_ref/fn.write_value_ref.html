@@ -9,7 +9,9 @@
 
     <title>rmp::encode::value_ref::write_value_ref - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
 
     
     
@@ -24,10 +26,10 @@
 
     
 
-    <section class="sidebar">
+    <nav class="sidebar">
         
         <p class='location'><a href='../../index.html'>rmp</a>::<wbr><a href='../index.html'>encode</a>::<wbr><a href='index.html'>value_ref</a></p><script>window.sidebarCurrent = {name: 'write_value_ref', ty: 'fn', relpath: ''};</script><script defer src="sidebar-items.js"></script>
-    </section>
+    </nav>
 
     <nav class="sub">
         <form class="search-form js-only">
@@ -42,19 +44,18 @@
 
     <section id='main' class="content fn">
 <h1 class='fqn'><span class='in-band'>Function <a href='../../index.html'>rmp</a>::<wbr><a href='../index.html'>encode</a>::<wbr><a href='index.html'>value_ref</a>::<wbr><a class='fn' href=''>write_value_ref</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-176' class='srclink' href='../../../src/rmp/encode/value_ref.rs.html#85-132' title='goto source code'>[src]</a></span></h1>
-<pre class='rust fn'>pub fn write_value_ref&lt;W&gt;(wr: &amp;mut W, val: &amp;<a class='enum' href='../../../rmp/value/enum.ValueRef.html' title='rmp::value::ValueRef'>ValueRef</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../../../rmp/encode/value_ref/struct.Error.html' title='rmp::encode::value_ref::Error'>Error</a>&gt; <span class='where'>where W: <a class='trait' href='https://doc.rust-lang.org/nightly/std/io/trait.Write.html' title='std::io::Write'>Write</a></span></pre><div class='docblock'><p>Encodes and attempts to write the given non-owning ValueRef into the Write.</p>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-67' class='srclink' href='../../../src/rmp/rmp/src/encode/value_ref.rs.html#85-132' title='goto source code'>[src]</a></span></h1>
+<pre class='rust fn'>pub fn write_value_ref&lt;W&gt;(wr: &amp;mut W, val: &amp;<a class='enum' href='../../../rmp/value/enum.ValueRef.html' title='rmp::value::ValueRef'>ValueRef</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../../../rmp/encode/value_ref/struct.Error.html' title='rmp::encode::value_ref::Error'>Error</a>&gt; <span class='where'>where W: <a class='trait' href='https://doc.rust-lang.org/nightly/std/io/trait.Write.html' title='std::io::Write'>Write</a></span></pre><div class='docblock'><p>Encodes and attempts to write the given non-owning ValueRef into the Write.</p>
 
-<h1 id="errors" class='section-header'><a
-                           href="#errors">Errors</a></h1>
+<h1 id='errors' class='section-header'><a href='#errors'>Errors</a></h1>
 <p>This function returns Error with an underlying I/O error if unable to properly write entire
 value. Interruption errors are handled internally by silent operation restarting.</p>
 
-<h1 id="examples" class='section-header'><a
-                           href="#examples">Examples</a></h1><pre class='rust rust-example-rendered'>
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
 <span class='kw'>use</span> <span class='ident'>rmp</span>::<span class='ident'>ValueRef</span>;
 <span class='kw'>use</span> <span class='ident'>rmp</span>::<span class='ident'>encode</span>::<span class='ident'>value_ref</span>::<span class='ident'>write_value_ref</span>;
 
@@ -68,10 +69,12 @@ value. Interruption errors are handled internally by silent operation restarting
 
     <section class="footer"></section>
 
-    <div id="help" class="hidden">
+    <aside id="help" class="hidden">
         <div>
+            <h1 class="hidden">Help</h1>
+
             <div class="shortcuts">
-                <h1>Keyboard Shortcuts</h1>
+                <h2>Keyboard Shortcuts</h2>
 
                 <dl>
                     <dt>?</dt>
@@ -84,11 +87,13 @@ value. Interruption errors are handled internally by silent operation restarting
                     <dd>Move down in search results</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
 
             <div class="infos">
-                <h1>Search Tricks</h1>
+                <h2>Search Tricks</h2>
 
                 <p>
                     Prefix searches with a type followed by a colon (e.g.
@@ -104,11 +109,11 @@ value. Interruption errors are handled internally by silent operation restarting
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>
-    </div>
+    </aside>
 
     
 
@@ -120,6 +125,6 @@ value. Interruption errors are handled internally by silent operation restarting
     <script src="../../../jquery.js"></script>
     <script src="../../../main.js"></script>
     
-    <script async src="../../../search-index.js"></script>
+    <script defer src="../../../search-index.js"></script>
 </body>
 </html>

@@ -9,7 +9,9 @@
 
     <title>rmp::decode::read_i32 - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
+    
 
     
     
@@ -24,10 +26,10 @@
 
     
 
-    <section class="sidebar">
+    <nav class="sidebar">
         
         <p class='location'><a href='../index.html'>rmp</a>::<wbr><a href='index.html'>decode</a></p><script>window.sidebarCurrent = {name: 'read_i32', ty: 'fn', relpath: ''};</script><script defer src="sidebar-items.js"></script>
-    </section>
+    </nav>
 
     <nav class="sub">
         <form class="search-form js-only">
@@ -42,24 +44,22 @@
 
     <section id='main' class="content fn">
 <h1 class='fqn'><span class='in-band'>Function <a href='../index.html'>rmp</a>::<wbr><a href='index.html'>decode</a>::<wbr><a class='fn' href=''>read_i32</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-7922' class='srclink' href='../../src/rmp/decode.rs.html#612-616' title='goto source code'>[src]</a></span></h1>
-<pre class='rust fn'>pub fn read_i32&lt;R&gt;(rd: &amp;mut R) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, <a class='enum' href='../../rmp/decode/enum.ValueReadError.html' title='rmp::decode::ValueReadError'>ValueReadError</a>&gt; <span class='where'>where R: <a class='trait' href='https://doc.rust-lang.org/nightly/std/io/trait.Read.html' title='std::io::Read'>Read</a></span></pre><div class='docblock'><p>Attempts to read exactly 5 bytes from the given reader and to decode them as <code>i32</code> value.</p>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-1252' class='srclink' href='../../src/rmp/rmp/src/decode.rs.html#612-616' title='goto source code'>[src]</a></span></h1>
+<pre class='rust fn'>pub fn read_i32&lt;R&gt;(rd: &amp;mut R) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a>, <a class='enum' href='../../rmp/decode/enum.ValueReadError.html' title='rmp::decode::ValueReadError'>ValueReadError</a>&gt; <span class='where'>where R: <a class='trait' href='https://doc.rust-lang.org/nightly/std/io/trait.Read.html' title='std::io::Read'>Read</a></span></pre><div class='docblock'><p>Attempts to read exactly 5 bytes from the given reader and to decode them as <code>i32</code> value.</p>
 
 <p>The first byte should be the marker and the others should represent the data itself.</p>
 
-<h1 id="errors" class='section-header'><a
-                           href="#errors">Errors</a></h1>
+<h1 id='errors' class='section-header'><a href='#errors'>Errors</a></h1>
 <p>This function will return <code>ValueReadError</code> on any I/O error while reading either the marker or
 the data, except the EINTR, which is handled internally.</p>
 
 <p>It also returns <code>ValueReadError::TypeMismatch</code> if the actual type is not equal with the
 expected one, indicating you with the actual type.</p>
 
-<h1 id="note" class='section-header'><a
-                           href="#note">Note</a></h1>
+<h1 id='note' class='section-header'><a href='#note'>Note</a></h1>
 <p>This function will silently retry on every EINTR received from the underlying <code>Read</code> until
 successful read.</p>
 </div></section>
@@ -67,10 +67,12 @@ successful read.</p>
 
     <section class="footer"></section>
 
-    <div id="help" class="hidden">
+    <aside id="help" class="hidden">
         <div>
+            <h1 class="hidden">Help</h1>
+
             <div class="shortcuts">
-                <h1>Keyboard Shortcuts</h1>
+                <h2>Keyboard Shortcuts</h2>
 
                 <dl>
                     <dt>?</dt>
@@ -83,11 +85,13 @@ successful read.</p>
                     <dd>Move down in search results</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
 
             <div class="infos">
-                <h1>Search Tricks</h1>
+                <h2>Search Tricks</h2>
 
                 <p>
                     Prefix searches with a type followed by a colon (e.g.
@@ -103,11 +107,11 @@ successful read.</p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>
-    </div>
+    </aside>
 
     
 
@@ -119,6 +123,6 @@ successful read.</p>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
     
-    <script async src="../../search-index.js"></script>
+    <script defer src="../../search-index.js"></script>
 </body>
 </html>

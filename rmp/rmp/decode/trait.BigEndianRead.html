@@ -9,7 +9,9 @@
 
     <title>rmp::decode::BigEndianRead - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
+    
 
     
     
@@ -24,10 +26,10 @@
 
     
 
-    <section class="sidebar">
+    <nav class="sidebar">
         
         <p class='location'><a href='../index.html'>rmp</a>::<wbr><a href='index.html'>decode</a></p><script>window.sidebarCurrent = {name: 'BigEndianRead', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
-    </section>
+    </nav>
 
     <nav class="sub">
         <form class="search-form js-only">
@@ -42,10 +44,10 @@
 
     <section id='main' class="content trait">
 <h1 class='fqn'><span class='in-band'>Trait <a href='../index.html'>rmp</a>::<wbr><a href='index.html'>decode</a>::<wbr><a class='trait' href=''>BigEndianRead</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-7532' class='srclink' href='../../src/rmp/decode.rs.html#383-385' title='goto source code'>[src]</a></span></h1>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-1175' class='srclink' href='../../src/rmp/rmp/src/decode.rs.html#383-385' title='goto source code'>[src]</a></span></h1>
 <pre class='rust trait'>pub trait BigEndianRead: <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='core::marker::Sized'>Sized</a> {
     fn <a href='#tymethod.read' class='fnname'>read</a>&lt;R: <a class='trait' href='https://doc.rust-lang.org/nightly/std/io/trait.Read.html' title='std::io::Read'>Read</a>&gt;(rd: &amp;mut R) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;Self, <a class='enum' href='http://burntsushi.net/rustdoc/byteorder/byteorder/new/enum.Error.html' title='byteorder::new::Error'>Error</a>&gt;;
 }</pre>
@@ -54,27 +56,29 @@
         <h3 id='tymethod.read' class='method stab '><code>fn <a href='#tymethod.read' class='fnname'>read</a>&lt;R: <a class='trait' href='https://doc.rust-lang.org/nightly/std/io/trait.Read.html' title='std::io::Read'>Read</a>&gt;(rd: &amp;mut R) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;Self, <a class='enum' href='http://burntsushi.net/rustdoc/byteorder/byteorder/new/enum.Error.html' title='byteorder::new::Error'>Error</a>&gt;</code></h3></div>
         <h2 id='implementors'>Implementors</h2>
         <ul class='item-list' id='implementors-list'>
-    <li><code>impl <a class='trait' href='../../rmp/decode/trait.BigEndianRead.html' title='rmp::decode::BigEndianRead'>BigEndianRead</a> for <a href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code></li>
-<li><code>impl <a class='trait' href='../../rmp/decode/trait.BigEndianRead.html' title='rmp::decode::BigEndianRead'>BigEndianRead</a> for <a href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code></li>
-<li><code>impl <a class='trait' href='../../rmp/decode/trait.BigEndianRead.html' title='rmp::decode::BigEndianRead'>BigEndianRead</a> for <a href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></li>
-<li><code>impl <a class='trait' href='../../rmp/decode/trait.BigEndianRead.html' title='rmp::decode::BigEndianRead'>BigEndianRead</a> for <a href='https://doc.rust-lang.org/nightly/std/primitive.u64.html'>u64</a></code></li>
-<li><code>impl <a class='trait' href='../../rmp/decode/trait.BigEndianRead.html' title='rmp::decode::BigEndianRead'>BigEndianRead</a> for <a href='https://doc.rust-lang.org/nightly/std/primitive.i8.html'>i8</a></code></li>
-<li><code>impl <a class='trait' href='../../rmp/decode/trait.BigEndianRead.html' title='rmp::decode::BigEndianRead'>BigEndianRead</a> for <a href='https://doc.rust-lang.org/nightly/std/primitive.i16.html'>i16</a></code></li>
-<li><code>impl <a class='trait' href='../../rmp/decode/trait.BigEndianRead.html' title='rmp::decode::BigEndianRead'>BigEndianRead</a> for <a href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code></li>
-<li><code>impl <a class='trait' href='../../rmp/decode/trait.BigEndianRead.html' title='rmp::decode::BigEndianRead'>BigEndianRead</a> for <a href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a></code></li>
-<li><code>impl <a class='trait' href='../../rmp/decode/trait.BigEndianRead.html' title='rmp::decode::BigEndianRead'>BigEndianRead</a> for <a href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code></li>
-<li><code>impl <a class='trait' href='../../rmp/decode/trait.BigEndianRead.html' title='rmp::decode::BigEndianRead'>BigEndianRead</a> for <a href='https://doc.rust-lang.org/nightly/std/primitive.f64.html'>f64</a></code></li>
+    <li><code>impl BigEndianRead for <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code></li>
+<li><code>impl BigEndianRead for <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code></li>
+<li><code>impl BigEndianRead for <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></li>
+<li><code>impl BigEndianRead for <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u64.html'>u64</a></code></li>
+<li><code>impl BigEndianRead for <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i8.html'>i8</a></code></li>
+<li><code>impl BigEndianRead for <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i16.html'>i16</a></code></li>
+<li><code>impl BigEndianRead for <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i32.html'>i32</a></code></li>
+<li><code>impl BigEndianRead for <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a></code></li>
+<li><code>impl BigEndianRead for <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code></li>
+<li><code>impl BigEndianRead for <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f64.html'>f64</a></code></li>
 </ul><script type="text/javascript" async
-                              src="../../implementors/rmp/decode/trait.BigEndianRead.js">
-                      </script></section>
+                         src="../../implementors/rmp/decode/trait.BigEndianRead.js">
+                 </script></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
 
-    <div id="help" class="hidden">
+    <aside id="help" class="hidden">
         <div>
+            <h1 class="hidden">Help</h1>
+
             <div class="shortcuts">
-                <h1>Keyboard Shortcuts</h1>
+                <h2>Keyboard Shortcuts</h2>
 
                 <dl>
                     <dt>?</dt>
@@ -87,11 +91,13 @@
                     <dd>Move down in search results</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
 
             <div class="infos">
-                <h1>Search Tricks</h1>
+                <h2>Search Tricks</h2>
 
                 <p>
                     Prefix searches with a type followed by a colon (e.g.
@@ -107,11 +113,11 @@
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>
-    </div>
+    </aside>
 
     
 
@@ -123,6 +129,6 @@
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
     
-    <script async src="../../search-index.js"></script>
+    <script defer src="../../search-index.js"></script>
 </body>
 </html>

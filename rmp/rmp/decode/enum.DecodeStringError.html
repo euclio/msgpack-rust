@@ -9,7 +9,9 @@
 
     <title>rmp::decode::DecodeStringError - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
+    
 
     
     
@@ -24,10 +26,10 @@
 
     
 
-    <section class="sidebar">
+    <nav class="sidebar">
         
         <p class='location'><a href='../index.html'>rmp</a>::<wbr><a href='index.html'>decode</a></p><script>window.sidebarCurrent = {name: 'DecodeStringError', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
-    </section>
+    </nav>
 
     <nav class="sub">
         <form class="search-form js-only">
@@ -42,33 +44,44 @@
 
     <section id='main' class="content enum">
 <h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>rmp</a>::<wbr><a href='index.html'>decode</a>::<wbr><a class='enum' href=''>DecodeStringError</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-7071' class='srclink' href='../../src/rmp/decode.rs.html#224-232' title='goto source code'>[src]</a></span></h1>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-1086' class='srclink' href='../../src/rmp/rmp/src/decode.rs.html#224-232' title='goto source code'>[src]</a></span></h1>
 <pre class='rust enum'>pub enum DecodeStringError&lt;'a&gt; {
     InvalidMarkerRead(<a class='enum' href='../../rmp/decode/enum.ReadError.html' title='rmp::decode::ReadError'>ReadError</a>),
     InvalidDataRead(<a class='enum' href='../../rmp/decode/enum.ReadError.html' title='rmp::decode::ReadError'>ReadError</a>),
     TypeMismatch(<a class='enum' href='../../rmp/enum.Marker.html' title='rmp::Marker'>Marker</a>),
-    BufferSizeTooSmall(<a href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>),
-    InvalidDataCopy(<a href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;'a [</a><a href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>, <a class='enum' href='../../rmp/decode/enum.ReadError.html' title='rmp::decode::ReadError'>ReadError</a>),
-    InvalidUtf8(<a href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;'a [</a><a href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>, <a class='struct' href='https://doc.rust-lang.org/nightly/core/str/struct.Utf8Error.html' title='core::str::Utf8Error'>Utf8Error</a>),
+    BufferSizeTooSmall(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>),
+    InvalidDataCopy(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;'a [</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>, <a class='enum' href='../../rmp/decode/enum.ReadError.html' title='rmp::decode::ReadError'>ReadError</a>),
+    InvalidUtf8(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;'a [</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>, <a class='struct' href='https://doc.rust-lang.org/nightly/core/str/struct.Utf8Error.html' title='core::str::Utf8Error'>Utf8Error</a>),
 }</pre><h2 class='variants'>Variants</h2>
-<table><tr><td id='variant.InvalidMarkerRead'><code>InvalidMarkerRead</code></td><td></td></tr><tr><td id='variant.InvalidDataRead'><code>InvalidDataRead</code></td><td></td></tr><tr><td id='variant.TypeMismatch'><code>TypeMismatch</code></td><td></td></tr><tr><td id='variant.BufferSizeTooSmall'><code>BufferSizeTooSmall</code></td><td><div class='docblock'><p>The given buffer is not large enough to accumulate the specified amount of bytes.</p>
-</div></td></tr><tr><td id='variant.InvalidDataCopy'><code>InvalidDataCopy</code></td><td></td></tr><tr><td id='variant.InvalidUtf8'><code>InvalidUtf8</code></td><td></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl&lt;'a&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/std/error/trait.Error.html' title='std::error::Error'>Error</a> for <a class='enum' href='../../rmp/decode/enum.DecodeStringError.html' title='rmp::decode::DecodeStringError'>DecodeStringError</a>&lt;'a&gt;</code></h3><div class='impl-items'><h4 id='method.description' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/std/error/trait.Error.html#method.description' class='fnname'>description</a>(&amp;self) -&gt; &amp;<a href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a></code></h4>
-<h4 id='method.cause' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/std/error/trait.Error.html#method.cause' class='fnname'>cause</a>(&amp;self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a class='trait' href='https://doc.rust-lang.org/nightly/std/error/trait.Error.html' title='std::error::Error'>Error</a>&gt;</code></h4>
-</div><h3 class='impl'><code>impl&lt;'a&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html' title='core::fmt::Display'>Display</a> for <a class='enum' href='../../rmp/decode/enum.DecodeStringError.html' title='rmp::decode::DecodeStringError'>DecodeStringError</a>&lt;'a&gt;</code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html#method.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
-</div><h3 class='impl'><code>impl&lt;'a&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html' title='core::convert::From'>From</a>&lt;<a class='enum' href='../../rmp/decode/enum.ValueReadError.html' title='rmp::decode::ValueReadError'>ValueReadError</a>&gt; for <a class='enum' href='../../rmp/decode/enum.DecodeStringError.html' title='rmp::decode::DecodeStringError'>DecodeStringError</a>&lt;'a&gt;</code></h3><div class='impl-items'><h4 id='method.from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#method.from' class='fnname'>from</a>(err: <a class='enum' href='../../rmp/decode/enum.ValueReadError.html' title='rmp::decode::ValueReadError'>ValueReadError</a>) -&gt; <a class='enum' href='../../rmp/decode/enum.DecodeStringError.html' title='rmp::decode::DecodeStringError'>DecodeStringError</a>&lt;'a&gt;</code></h4>
-</div><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl&lt;'a&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../../rmp/decode/enum.DecodeStringError.html' title='rmp::decode::DecodeStringError'>DecodeStringError</a>&lt;'a&gt;</code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
-</div></section>
+<table class='variants_table'><tr><td id='variant.InvalidMarkerRead'><code>InvalidMarkerRead</code></td><td></td><td></td></tr><tr><td id='variant.InvalidDataRead'><code>InvalidDataRead</code></td><td></td><td></td></tr><tr><td id='variant.TypeMismatch'><code>TypeMismatch</code></td><td></td><td></td></tr><tr><td id='variant.BufferSizeTooSmall'><code>BufferSizeTooSmall</code></td><td><div class='docblock'><p>The given buffer is not large enough to accumulate the specified amount of bytes.</p>
+</div></td><td></td></tr><tr><td id='variant.InvalidDataCopy'><code>InvalidDataCopy</code></td><td></td><td></td></tr><tr><td id='variant.InvalidUtf8'><code>InvalidUtf8</code></td><td></td><td></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/std/error/trait.Error.html' title='std::error::Error'>Error</a> for <a class='enum' href='../../rmp/decode/enum.DecodeStringError.html' title='rmp::decode::DecodeStringError'>DecodeStringError</a>&lt;'a&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a id='src-1121' class='srclink' href='../../src/rmp/rmp/src/decode.rs.html#234-248' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.description' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/std/error/trait.Error.html#tymethod.description' class='fnname'>description</a>(&amp;self) -&gt; &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a></code></h4>
+<div class='docblock'><p>A short description of the error. <a href="https://doc.rust-lang.org/nightly/std/error/trait.Error.html#tymethod.description">Read more</a></p>
+</div><h4 id='method.cause' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/std/error/trait.Error.html#method.cause' class='fnname'>cause</a>(&amp;self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a class='trait' href='https://doc.rust-lang.org/nightly/std/error/trait.Error.html' title='std::error::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>The lower-level cause of this error, if any.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html' title='core::fmt::Display'>Display</a> for <a class='enum' href='../../rmp/decode/enum.DecodeStringError.html' title='rmp::decode::DecodeStringError'>DecodeStringError</a>&lt;'a&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a id='src-1132' class='srclink' href='../../src/rmp/rmp/src/decode.rs.html#250-254' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html' title='core::convert::From'>From</a>&lt;<a class='enum' href='../../rmp/decode/enum.ValueReadError.html' title='rmp::decode::ValueReadError'>ValueReadError</a>&gt; for <a class='enum' href='../../rmp/decode/enum.DecodeStringError.html' title='rmp::decode::DecodeStringError'>DecodeStringError</a>&lt;'a&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a id='src-1137' class='srclink' href='../../src/rmp/rmp/src/decode.rs.html#256-264' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(err: <a class='enum' href='../../rmp/decode/enum.ValueReadError.html' title='rmp::decode::ValueReadError'>ValueReadError</a>) -&gt; <a class='enum' href='../../rmp/decode/enum.DecodeStringError.html' title='rmp::decode::DecodeStringError'>DecodeStringError</a>&lt;'a&gt;</code></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../../rmp/decode/enum.DecodeStringError.html' title='rmp::decode::DecodeStringError'>DecodeStringError</a>&lt;'a&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a id='src-1102' class='srclink' href='../../src/rmp/rmp/src/decode.rs.html#223' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt-1' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
 
-    <div id="help" class="hidden">
+    <aside id="help" class="hidden">
         <div>
+            <h1 class="hidden">Help</h1>
+
             <div class="shortcuts">
-                <h1>Keyboard Shortcuts</h1>
+                <h2>Keyboard Shortcuts</h2>
 
                 <dl>
                     <dt>?</dt>
@@ -81,11 +94,13 @@
                     <dd>Move down in search results</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
 
             <div class="infos">
-                <h1>Search Tricks</h1>
+                <h2>Search Tricks</h2>
 
                 <p>
                     Prefix searches with a type followed by a colon (e.g.
@@ -101,11 +116,11 @@
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>
-    </div>
+    </aside>
 
     
 
@@ -117,6 +132,6 @@
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
     
-    <script async src="../../search-index.js"></script>
+    <script defer src="../../search-index.js"></script>
 </body>
 </html>

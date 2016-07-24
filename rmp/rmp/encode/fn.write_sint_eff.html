@@ -9,7 +9,9 @@
 
     <title>rmp::encode::write_sint_eff - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
+    
 
     
     
@@ -24,10 +26,10 @@
 
     
 
-    <section class="sidebar">
+    <nav class="sidebar">
         
         <p class='location'><a href='../index.html'>rmp</a>::<wbr><a href='index.html'>encode</a></p><script>window.sidebarCurrent = {name: 'write_sint_eff', ty: 'fn', relpath: ''};</script><script defer src="sidebar-items.js"></script>
-    </section>
+    </nav>
 
     <nav class="sub">
         <form class="search-form js-only">
@@ -42,20 +44,22 @@
 
     <section id='main' class="content fn">
 <h1 class='fqn'><span class='in-band'>Function <a href='../index.html'>rmp</a>::<wbr><a href='index.html'>encode</a>::<wbr><a class='fn' href=''>write_sint_eff</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-2138' class='srclink' href='../../src/rmp/encode.rs.html#540-581' title='goto source code'>[src]</a></span></h1>
-<pre class='rust fn'>pub fn write_sint_eff&lt;W&gt;(wr: &amp;mut W, val: <a href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='enum' href='../../rmp/enum.Marker.html' title='rmp::Marker'>Marker</a>, <a class='enum' href='../../rmp/encode/enum.ValueWriteError.html' title='rmp::encode::ValueWriteError'>ValueWriteError</a>&gt; <span class='where'>where W: <a class='trait' href='https://doc.rust-lang.org/nightly/std/io/trait.Write.html' title='std::io::Write'>Write</a></span></pre><div class='docblock'><p>Encodes and attempts to write an <code>i64</code> value using the most effective representation.</p>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-361' class='srclink' href='../../src/rmp/rmp/src/encode.rs.html#540-581' title='goto source code'>[src]</a></span></h1>
+<pre class='rust fn'>pub fn write_sint_eff&lt;W&gt;(wr: &amp;mut W, val: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='enum' href='../../rmp/enum.Marker.html' title='rmp::Marker'>Marker</a>, <a class='enum' href='../../rmp/encode/enum.ValueWriteError.html' title='rmp::encode::ValueWriteError'>ValueWriteError</a>&gt; <span class='where'>where W: <a class='trait' href='https://doc.rust-lang.org/nightly/std/io/trait.Write.html' title='std::io::Write'>Write</a></span></pre><div class='docblock'><p>Encodes and attempts to write an <code>i64</code> value using the most effective representation.</p>
 </div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
 
-    <div id="help" class="hidden">
+    <aside id="help" class="hidden">
         <div>
+            <h1 class="hidden">Help</h1>
+
             <div class="shortcuts">
-                <h1>Keyboard Shortcuts</h1>
+                <h2>Keyboard Shortcuts</h2>
 
                 <dl>
                     <dt>?</dt>
@@ -68,11 +72,13 @@
                     <dd>Move down in search results</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
 
             <div class="infos">
-                <h1>Search Tricks</h1>
+                <h2>Search Tricks</h2>
 
                 <p>
                     Prefix searches with a type followed by a colon (e.g.
@@ -88,11 +94,11 @@
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>
-    </div>
+    </aside>
 
     
 
@@ -104,6 +110,6 @@
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
     
-    <script async src="../../search-index.js"></script>
+    <script defer src="../../search-index.js"></script>
 </body>
 </html>

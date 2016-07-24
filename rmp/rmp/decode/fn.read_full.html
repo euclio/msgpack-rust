@@ -9,7 +9,9 @@
 
     <title>rmp::decode::read_full - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
+    
 
     
     
@@ -24,10 +26,10 @@
 
     
 
-    <section class="sidebar">
+    <nav class="sidebar">
         
         <p class='location'><a href='../index.html'>rmp</a>::<wbr><a href='index.html'>decode</a></p><script>window.sidebarCurrent = {name: 'read_full', ty: 'fn', relpath: ''};</script><script defer src="sidebar-items.js"></script>
-    </section>
+    </nav>
 
     <nav class="sub">
         <form class="search-form js-only">
@@ -42,11 +44,11 @@
 
     <section id='main' class="content fn">
 <h1 class='fqn'><span class='in-band'>Function <a href='../index.html'>rmp</a>::<wbr><a href='index.html'>decode</a>::<wbr><a class='fn' href=''>read_full</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-12875' class='srclink' href='../../src/rmp/decode.rs.html#1359-1373' title='goto source code'>[src]</a></span></h1>
-<pre class='rust fn'>pub fn read_full&lt;R: <a class='trait' href='https://doc.rust-lang.org/nightly/std/io/trait.Read.html' title='std::io::Read'>Read</a>&gt;(rd: &amp;mut R, buf: <a href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;mut [</a><a href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>, <a class='struct' href='https://doc.rust-lang.org/nightly/std/io/error/struct.Error.html' title='std::io::error::Error'>Error</a>&gt;</pre><div class='docblock'><p>Copies the contents of a reader into a buffer until fully filled.</p>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-1779' class='srclink' href='../../src/rmp/rmp/src/decode.rs.html#1359-1373' title='goto source code'>[src]</a></span></h1>
+<pre class='rust fn'>pub fn read_full&lt;R: <a class='trait' href='https://doc.rust-lang.org/nightly/std/io/trait.Read.html' title='std::io::Read'>Read</a>&gt;(rd: &amp;mut R, buf: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;mut [</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>, <a class='struct' href='https://doc.rust-lang.org/nightly/std/io/error/struct.Error.html' title='std::io::error::Error'>Error</a>&gt;</pre><div class='docblock'><p>Copies the contents of a reader into a buffer until fully filled.</p>
 
 <p>This function will continuously read data from <code>rd</code> and then write it into <code>buf</code> in a streaming
 fashion until <code>rd</code> returns EOF.</p>
@@ -54,8 +56,7 @@ fashion until <code>rd</code> returns EOF.</p>
 <p>On success the total number of bytes that were copied from <code>rd</code> to <code>buf</code> is returned. Note, that
 reaching EOF is not treated as error.</p>
 
-<h1 id="errors" class='section-header'><a
-                           href="#errors">Errors</a></h1>
+<h1 id='errors' class='section-header'><a href='#errors'>Errors</a></h1>
 <p>This function will return an error immediately if any call to <code>read</code> returns an error. All
 instances of <code>ErrorKind::Interrupted</code> are handled by this function and the underlying operation
 is retried.</p>
@@ -64,10 +65,12 @@ is retried.</p>
 
     <section class="footer"></section>
 
-    <div id="help" class="hidden">
+    <aside id="help" class="hidden">
         <div>
+            <h1 class="hidden">Help</h1>
+
             <div class="shortcuts">
-                <h1>Keyboard Shortcuts</h1>
+                <h2>Keyboard Shortcuts</h2>
 
                 <dl>
                     <dt>?</dt>
@@ -80,11 +83,13 @@ is retried.</p>
                     <dd>Move down in search results</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
 
             <div class="infos">
-                <h1>Search Tricks</h1>
+                <h2>Search Tricks</h2>
 
                 <p>
                     Prefix searches with a type followed by a colon (e.g.
@@ -100,11 +105,11 @@ is retried.</p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>
-    </div>
+    </aside>
 
     
 
@@ -116,6 +121,6 @@ is retried.</p>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
     
-    <script async src="../../search-index.js"></script>
+    <script defer src="../../search-index.js"></script>
 </body>
 </html>

@@ -9,7 +9,9 @@
 
     <title>rmp::decode::read_bin_borrow - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../../main.css">
+    
 
     
     
@@ -24,10 +26,10 @@
 
     
 
-    <section class="sidebar">
+    <nav class="sidebar">
         
         <p class='location'><a href='../index.html'>rmp</a>::<wbr><a href='index.html'>decode</a></p><script>window.sidebarCurrent = {name: 'read_bin_borrow', ty: 'fn', relpath: ''};</script><script defer src="sidebar-items.js"></script>
-    </section>
+    </nav>
 
     <nav class="sub">
         <form class="search-form js-only">
@@ -42,32 +44,32 @@
 
     <section id='main' class="content fn">
 <h1 class='fqn'><span class='in-band'>Function <a href='../index.html'>rmp</a>::<wbr><a href='index.html'>decode</a>::<wbr><a class='fn' href=''>read_bin_borrow</a></span><span class='out-of-band'><span id='render-detail'>
-            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                [<span class='inner'>&#x2212;</span>]
-            </a>
-        </span><a id='src-12391' class='srclink' href='../../src/rmp/decode.rs.html#1190-1201' title='goto source code'>[src]</a></span></h1>
-<pre class='rust fn'>pub fn read_bin_borrow(rd: <a href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a><a href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a><a href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>, <a class='enum' href='../../rmp/decode/enum.ValueReadError.html' title='rmp::decode::ValueReadError'>ValueReadError</a>&gt;</pre><div class='docblock'><p>Attempts to read some bytes from the given slice until a complete Binary message is decoded,
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-1707' class='srclink' href='../../src/rmp/rmp/src/decode.rs.html#1190-1201' title='goto source code'>[src]</a></span></h1>
+<pre class='rust fn'>pub fn read_bin_borrow(rd: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>, <a class='enum' href='../../rmp/decode/enum.ValueReadError.html' title='rmp::decode::ValueReadError'>ValueReadError</a>&gt;</pre><div class='docblock'><p>Attempts to read some bytes from the given slice until a complete Binary message is decoded,
 returning a borrowed slice with the data.</p>
 
 <p>This includes reading both length and the data itself.</p>
 
-<h1 id="note" class='section-header'><a
-                           href="#note">Note</a></h1>
+<h1 id='note' class='section-header'><a href='#note'>Note</a></h1>
 <p>This function will silently retry on every EINTR received from the underlying <code>Read</code> until
 successful read.</p>
 
-<h1 id="unstable" class='section-header'><a
-                           href="#unstable">Unstable</a></h1>
+<h1 id='unstable' class='section-header'><a href='#unstable'>Unstable</a></h1>
 <p>This function is unstable, moreover I have a plan to drop it.</p>
 </div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
 
-    <div id="help" class="hidden">
+    <aside id="help" class="hidden">
         <div>
+            <h1 class="hidden">Help</h1>
+
             <div class="shortcuts">
-                <h1>Keyboard Shortcuts</h1>
+                <h2>Keyboard Shortcuts</h2>
 
                 <dl>
                     <dt>?</dt>
@@ -80,11 +82,13 @@ successful read.</p>
                     <dd>Move down in search results</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
 
             <div class="infos">
-                <h1>Search Tricks</h1>
+                <h2>Search Tricks</h2>
 
                 <p>
                     Prefix searches with a type followed by a colon (e.g.
@@ -100,11 +104,11 @@ successful read.</p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>
-    </div>
+    </aside>
 
     
 
@@ -116,6 +120,6 @@ successful read.</p>
     <script src="../../jquery.js"></script>
     <script src="../../main.js"></script>
     
-    <script async src="../../search-index.js"></script>
+    <script defer src="../../search-index.js"></script>
 </body>
 </html>
