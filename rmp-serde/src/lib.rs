@@ -5,7 +5,7 @@ extern crate serde;
 use std::ops::Deref;
 
 use serde::bytes::Bytes;
-use serde::{Serialize, Deserialize};
+use serde::{ser, de, Serialize, Deserialize};
 
 use rmp::value::{Float, Integer};
 
@@ -29,6 +29,205 @@ impl Deref for Value {
 }
 /// Non-owning wrapper over rmp `Value` reference to allow serialization and deserialization.
 pub struct BorrowedValue<'a>(pub &'a rmp::Value);
+
+pub struct Serializer {
+    value: Value,
+}
+
+impl Serializer {
+    fn new() -> Serializer {
+        Serializer {
+            value: Value(rmp::Value::Nil),
+        }
+    }
+}
+
+#[doc(hidden)]
+pub struct TupleVariantState {
+    name: String,
+    vec: Vec<Value>,
+}
+
+#[doc(hidden)]
+pub struct StructVariantState {
+    name: String,
+    fields: Map<String, Value>,
+}
+
+#[doc(hidden)]
+pub struct MapState {
+    map: Map<String, Value>,
+    next_key: Option<String>,
+}
+
+impl ser::Serializer for Serializer {
+    type Error = Error;
+
+    type SeqState = Vec<Value>;
+    type TupleState = Vec<Value>;
+    type TupleStructState = Vec<Value>;
+    type TupleVariantState = TupleVariantState;
+    type MapState = MapState;
+    type StructState = MapState;
+    type StructVariantState = StructVariantState;
+
+    fn serialize_bool(&mut self, value: bool) -> Result<(), Self::Error> {
+        self.value = rmp::Value::Boolean(value);
+        Ok(())
+    }
+
+    fn serialize_isize(&mut self, value: isize) -> Result<(), Self::Error> {
+        self.serialize_i64(value as i64)
+    }
+
+    fn serialize_i8(&mut self, value: i8) -> Result<(), Self::Error> {
+        self.serialize_i64(value as i64)
+    }
+
+    fn serialize_i16(&mut self, value: i16) -> Result<(), Self::Error> {
+        self.serialize_i16(value as i64)
+    }
+
+    fn serialize_i32(&mut self, value: i32) -> Result<(), Self::Error> {
+        self.serialize_i32(value as i64)
+    }
+
+    fn serialize_i64(&mut self, value: i64) -> Result<(), Self::Error> {
+        self.value = if value < 0 {
+            Value(rmp::Value::Integer(rmp::value::Integer::I64(value)))
+        } else {
+            Value(rmp::Value::Integer(rmp::value::Integer::U64(value as u64)))
+        };
+        Ok(())
+    }
+
+    fn serialize_usize(&mut self, value: usize) -> Result<(), Self::Error> {
+        self.serialize_i64(value as u64)
+    }
+
+    fn serialize_u8(&mut self, value: u8) -> Result<(), Self::Error> {
+        self.serialize_u64(value as u64)
+    }
+
+    fn serialize_u16(&mut self, value: u16) -> Result<(), Self::Error> {
+        self.serialize_u16(value as u64)
+    }
+
+    fn serialize_u32(&mut self, value: u32) -> Result<(), Self::Error> {
+        self.serialize_u32(value as u64)
+    }
+
+    fn serialize_u64(&mut self, value: u64) -> Result<(), Self::Error> {
+        self.value = Value(rmp::Value::Integer(rmp::value::Integer::U64(value as u64)));
+        Ok(())
+    }
+
+    fn serialize_f32(&mut self, value: f32) -> Result<(), Self::Error> {
+        self.value = Value(rmp::Value::Float(Float::F32(value)));
+        Ok(())
+    }
+
+    fn serialize_f64(&mut self, value: f64) -> Result<(), Self::Error> {
+        self.value = Value(rmp::Value::Float(Float::F64(value)));
+        Ok(())
+    }
+
+    fn serialize_char(&mut self, value: char) -> Result<(), Self::Error> {
+        let mut s = String::new();
+        s.push(value);
+        self.serialize_str(&s)
+    }
+
+    fn serialize_str(&mut self, value: &str) -> Result<(), Self::Error> {
+        self.value = Value(rmp::Value::String(String::from(value)));
+        Ok(())
+    }
+
+    fn serialize_bytes(&mut self, value: &[u8]) -> Result<(), Self::Error> {
+        self.value = Value(rmp::Value::Binary(Bytes::from(value)));
+        Ok(())
+    }
+
+    fn serialize_unit(&mut self) -> Result<(), Error> {
+        self.value = Value(rmp::Value::Nil);
+        Ok(())
+    }
+
+    fn serialize_unit_struct(&mut self, _name: &'static str) -> Result<(), Self::Error> {
+        self.serialize_unit()
+    }
+
+    fn serialize_unit_variant(&mut self,
+                              _name: &'static str,
+                              _variant_index: usize,
+                              variant: &'static str) -> Result<(), Self::Error> {
+        self.serialize_str(variant)
+    }
+
+    fn serialize_newtype_struct<T>(&mut self,
+                                   _name: &'static str,
+                                   value: T) -> Result<(), Self::Error> {
+        value.serialize(self)
+    }
+
+    fn serialize_newtype_variant<T>(&mut self,
+                                    _name: &'static str,
+                                    _variant_index: usize,
+                                    variant: &'static str,
+                                    value: T) -> Result<(), Self::Error> where T: ser::Serialize {
+        let mut values = Map::new();
+        values.insert(String::from(variant), to_value(&value));
+        self.value = rmp::Value::Map(values);
+        Ok(())
+    }
+
+    fn serialize_none(&mut self) -> Result<(), Self::Error> {
+        self.serialize_unit()
+    }
+
+    fn serialize_some<V>(&mut self, value: V) -> Result<(), Self::Error> {
+        value.serialize(self)
+    }
+
+    fn serialize_seq(&mut self, len: Option<usize>) -> Result<(), Self::Error> {
+        Ok(Vec::with_capacity(len.unwrap_or(0)))
+    }
+
+    fn serialize_seq_elt<T>(&mut self,
+                            state: &mut Vec<Value>,
+                            value: T) -> Result<(), Self::Error> where T: Serialize {
+        state.push(to_value(&value));
+        Ok(())
+    }
+
+    fn serialize_seq_end(&mut self, state: Vec<Value>) -> Result<(), Self::Error> {
+        self.value = rmp::Value::Array(state);
+        Ok(())
+    }
+
+    fn serialize_seq_fixed_size(&mut self, size: usize) -> Result<Vec<Value>, Self::Error> {
+        self.serialize_seq(Some(len))
+    }
+
+    fn serialize_tuple(&mut self, len: usize) -> Result<Vec<Value>, Self::Error> {
+        self.serialize_seq(Some(len))
+    }
+
+    fn serialize_tuple_elt<T>(&mut self, state: &mut Vec<Value>, value: T)
+        -> Result<(), Self::Error> {
+        self.serialize_seq_elt(state, value)
+    }
+
+    fn serialize_tuple_end(&mut self, state: Vec<Value>) -> Result<(), Self::Error> {
+        self.serialize_seq_end(state)
+    }
+}
+
+
+pub fn from_value<T>(value: Value) -> Result<T, ()> where T: Serialize {
+    let mut de = Deserializer::new(value);
+    de::Deserialize::deserialize(&mut de)
+}
 
 impl<T: Into<rmp::Value>> From<T> for Value {
     fn from(val: T) -> Value {
